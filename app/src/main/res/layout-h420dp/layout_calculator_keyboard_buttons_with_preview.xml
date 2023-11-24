@@ -1,6 +1,7 @@
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
@@ -20,6 +21,47 @@
         android:layout_marginEnd="2dp"
         android:textAppearance="@style/calculator_equation_preview_text_appearance"
         tools:text="15.5+89x25-6+15.5+89x25-6+15.5+89x25-6+15.5+89x25-6"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calculator_button_height"
+            android:layout_weight="1"
+            android:text="C"
+            android:contentDescription="@string/calculator_button_description_clear"
+            style="@style/Calculator.Button.Clear"/>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnToggleSign"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calculator_button_height"
+            android:layout_weight="1"
+            android:text="+/−"
+            style="@style/Calculator.Button"/>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnPercentage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calculator_button_height"
+            android:layout_weight="1"
+            android:text="%"
+            style="@style/Calculator.Button"/>
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnDel"
+            style="@style/Calculator.Button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/calculator_button_height"
+            android:layout_weight="1"
+            android:contentDescription="@string/calculator_button_description_backspace"
+            app:icon="@drawable/ic_baseline_backspace_24"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:iconTint="@color/white"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,14 +97,6 @@
             android:text="÷"
             style="@style/Calculator.Button"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnClear"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/calculator_button_height"
-            android:layout_weight="1"
-            android:text="C"
-            android:contentDescription="@string/calculator_button_description_clear"
-            style="@style/Calculator.Button.Clear"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -97,13 +131,6 @@
             android:layout_height="@dimen/calculator_button_height"
             android:layout_weight="1"
             android:text="×"
-            style="@style/Calculator.Button"/>
-
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnPercentage"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/calculator_button_height"
-            android:layout_weight="1"
-            android:text="%"
             style="@style/Calculator.Button"/>
 
     </LinearLayout>
@@ -142,13 +169,6 @@
             android:text="−"
             style="@style/Calculator.Button"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnToggleSign"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/calculator_button_height"
-            android:layout_weight="1"
-            android:text="+/−"
-            style="@style/Calculator.Button"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -185,17 +205,6 @@
             android:layout_height="@dimen/calculator_button_height"
             android:layout_weight="1"
             android:text="+" />
-
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnDel"
-            style="@style/Calculator.Button"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/calculator_button_height"
-            android:layout_weight="1"
-            android:contentDescription="@string/calculator_button_description_backspace"
-            app:icon="@drawable/ic_baseline_backspace_24"
-            app:iconGravity="textStart"
-            app:iconSize="18dp"
-            app:iconTint="@color/white"/>
 
     </LinearLayout>
 

@@ -3,16 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
-    android:paddingTop="2dp"
-    android:paddingBottom="2dp"
+    android:paddingTop="@dimen/calculator_keyboard_inset"
+    android:paddingBottom="@dimen/calculator_keyboard_inset"
     android:background="@color/calculator_keyboard_background_color">
 
     <FrameLayout
         android:layout_width="600dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
-        <include layout="@layout/layout_calculator_keyboard_buttons_with_preview" />
+        <include layout="@layout/layout_calculator_keyboard_buttons_with_preview"/>
 
     </FrameLayout>
 

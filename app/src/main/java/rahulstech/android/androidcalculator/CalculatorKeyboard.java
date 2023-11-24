@@ -37,6 +37,7 @@ public class CalculatorKeyboard extends PopupWindow implements View.OnClickListe
 
     private static final BigDecimal HUNDRED = BigDecimal.valueOf(100);
 
+    @SuppressWarnings("FieldCanBeLocal")
     private TextView mEqnPreview;
     private Button btnClear;
     private Button btnToggleSign;
@@ -73,7 +74,7 @@ public class CalculatorKeyboard extends PopupWindow implements View.OnClickListe
     }
 
     public CalculatorKeyboard(@NonNull Context context, @NonNull Size maxDimension) {
-        super(context);
+        super(context, null, R.style.Calculator);
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View contentView = inflater.inflate(R.layout.layout_calculator_keyboard, null);
@@ -86,6 +87,7 @@ public class CalculatorKeyboard extends PopupWindow implements View.OnClickListe
 
         setWidth(windowWidth);
         setHeight(windowHeight);
+        setAnimationStyle(android.R.style.Animation_InputMethod);
 
         mEqnPreview = contentView.findViewById(R.id.equation_preview);
         btnClear = contentView.findViewById(R.id.btnClear);
@@ -324,10 +326,10 @@ public class CalculatorKeyboard extends PopupWindow implements View.OnClickListe
             return left.multiply(right);
         }
         else if (DIVISION.equals(operation)) {
-            return left.divide(right,MathContext.UNLIMITED);
+            return left.divide(right,MathContext.DECIMAL64);
         }
         else if (PERCENTAGE.equals(operation)) {
-            return left.multiply(right).divide(HUNDRED, MathContext.UNLIMITED);
+            return left.multiply(right).divide(HUNDRED, MathContext.DECIMAL64);
         }
         else if (EQUAL.equals(operation)) {
             return left;
